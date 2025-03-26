@@ -19,21 +19,15 @@ data = response.json()
 if response.status_code == 200:
     data = response.json()
     print("✅ Données récupérées avec succès !")
-    print(data)
 else:
     print(f"❌ Erreur {response.status_code}: {response.text}")
 
 villes = [{"id": station["id"], "nom": station["nom"], "latitude": station["lat"], "longitude": station["lon"]} for station in data]
 
-print("Données récupérées:", villes)
-
 client = MongoClient("mongodb://localhost:27017/")
 db = client["weatherDB"]
 collection = db["data"]
 collection.insert_many(villes)
-
-print(collection)
-print("✅ Données insérées dans MongoDB !")
 
 def bubble_sort(arr, key):
     n = len(arr)
