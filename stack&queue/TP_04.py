@@ -25,7 +25,7 @@ class Queue:
 
 url = ('https://newsapi.org/v2/top-headlines?'
        'country=us&'
-       'apiKey=bfb7f013ab9846ffbd2b529db0775073')
+       'apiKey=')
 
 response = requests.get(url)
 data = response.json()
