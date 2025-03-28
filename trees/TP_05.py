@@ -48,7 +48,6 @@ def decompress(binary_code, tree):
             current_node = tree
     return decompressed_text
 
-# Example test
 if __name__ == "__main__":
     text = "huffman coding is fun"
     binary_code, dictionary, tree = compress(text)
